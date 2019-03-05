@@ -1,51 +1,67 @@
 package com.linburgtech.medialib;
 
-public class Song {
-
-    private int rating = 0;
-    private String title = "";
-    //price - double - 0.0
-    private boolean favorite = false;
-
+/**
+ * A song to save to the library
+ * 
+ * @author ckinnard
+ * @version 3/5/16
+ */
+public class Song
+{
+    private String title;
+    private int rating;
+    private boolean favorite;
+    private double  price;
+    /**
+     * Constructor for objects of class Song
+     */
     public Song()
     {
-        rating = 1;
-        title = "Song Unnamed";
-
+        // initialise instance variables
+        rating = 0;
+        title = "";
+        price = 0.0;
     }
-    public Song(int rating, String title)
-    {
-        this.rating = rating;
+    public Song(String title) {
         this.title = title;
-
     }
-
-    public String getTitle(){
+    public Song(String title, double price) {
+        this.title = title;
+        this.price = price;
+    }
+        public Song(String title, double price, int rating) {
+        this.title = title;
+        this.price = price;
+        this.rating = rating;
+    }
+    
+    public String getTitle() {
         return title;
     }
-
-    public void setTitle(String title){
-        this.title = title;
+    
+    public void setTitle(String t) {
+        title = t;
     }
-
-    public int getRating(){
+    
+    
+    public int getRating() {
         return rating;
     }
-
-    public void setRating(int rating){
-        this.rating = rating;
+    
+    public void setRating(int r) {
+        rating = r;
     }
-
-    public void addToFavorites(){
+    
+        
+    public double getPrice() {
+        return price;
+    }
+    
+    public void setPrice(double p) {
+        price = p;
+    }
+    
+    public void addToFavorites() {
         favorite = true;
-    }
-
-    public void modifyFavorites(){
-        if (favorite){favorite = false;}
-        else {favorite = true;}
-    }
-
-    public boolean getFavorite(){
-        return favorite;
     }
 }
